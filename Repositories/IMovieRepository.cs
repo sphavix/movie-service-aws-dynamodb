@@ -1,17 +1,17 @@
-using MoviesApi.Dtos;
+using MoviesApi.Contracts.Dtos;
 using MoviesApi.Models;
 
 namespace MoviesApi.Repositories
 {
     public interface IMovieRepository
     {
-        Task<bool> CreateMovieAsync(MovieRequest movie);
+        Task<bool> CreateMovieAsync(MovieDto movie);
 
-        Task<Movie> GetMovieByIdAsync(Guid id);
+        Task<MovieDto> GetMovieByIdAsync(Guid id);
 
-        Task<IEnumerable<Movie>> GetAllMoviesAsync();
+        Task<IEnumerable<MovieDto>> GetAllMoviesAsync();
 
-        Task<bool> UpdateMovieAsync(MovieRequest movie);
+        Task<bool> UpdateMovieAsync(MovieDto movie);
 
         Task<bool> DeleteMovieAsync(Guid id);
     }

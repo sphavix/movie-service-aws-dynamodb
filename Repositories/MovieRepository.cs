@@ -2,6 +2,7 @@ using System.Net;
 using System.Text.Json;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
+using MoviesApi.Contracts.Dtos;
 using MoviesApi.Models;
 
 namespace MoviesApi.Repositories
@@ -16,7 +17,7 @@ namespace MoviesApi.Repositories
             _dynamoDb = dynamoDb;
         }
 
-        public async Task<IEnumerable<Movie>> GetAllMoviesAsync()
+        public async Task<IEnumerable<MovieDto>> GetAllMoviesAsync()
         {
             var movies = new ScanRequest
             {
@@ -28,32 +29,35 @@ namespace MoviesApi.Repositories
             return response.Items.Select(x =>
             {
                 var json = Amazon.DynamoDBv2.DocumentModel.Document.FromAttributeMap(x).ToJson();
-                return JsonSerializer.Deserialize<Movie>(json); 
+                return JsonSerializer.Deserialize<MovieDto>(json); 
             });
         }
 
-        public async Task<Movie> GetMovieByIdAsync(Guid id)
+        public async Task<MovieDto> GetMovieByIdAsync(Guid id)
         {
-            var movie = new GetItemRequest
+            var movieRequest = new GetItemRequest
             {
                 TableName = _tableName,
                 Key = new Dictionary<string, AttributeValue>
                 {
-                    {"id", new AttributeValue { S = id.ToString()}}
+                    {"pk", new AttributeValue { S = id.ToString()}},
+                    { "sk", new AttributeValue{ S = id.ToString()}},
                 }
             };
 
-            var response = await _dynamoDb.GetItemAsync(movie);
+            var response = await _dynamoDb.GetItemAsync(movieRequest);
             if(response.Item.Count == 0) throw new Exception($"Movie with Id {id} Not Found!");
             var itemDocument = Amazon.DynamoDBv2.DocumentModel.Document.FromAttributeMap(response.Item);
             
-            return JsonSerializer.Deserialize<Movie>(itemDocument.ToJson());
+            return JsonSerializer.Deserialize<MovieDto>(itemDocument.ToJson());
         }
 
-        public async Task<bool> CreateMovieAsync(Movie request)
+        public async Task<bool> CreateMovieAsync(MovieDto movie)
         {
-            var movie = JsonSerializer.Serialize(request);
-            var movieAttributes = Amazon.DynamoDBv2.DocumentModel.Document.FromJson(movie).ToAttributeMap();
+            movie.UpdatedAt = DateTime.UtcNow;
+
+            var movieJson = JsonSerializer.Serialize(movie);
+            var movieAttributes = Amazon.DynamoDBv2.DocumentModel.Document.FromJson(movieJson).ToAttributeMap();
 
             var createMovie = new PutItemRequest
             {
@@ -66,34 +70,36 @@ namespace MoviesApi.Repositories
             return response.HttpStatusCode == HttpStatusCode.OK;
         }
 
-        public async Task<bool> UpdateMovieAsync(Movie request)
+        public async Task<bool> UpdateMovieAsync(MovieDto movie)
         {
-            var movie = JsonSerializer.Serialize(request);
-            var movieAttributes = Amazon.DynamoDBv2.DocumentModel.Document.FromJson(movie).ToAttributeMap();
+            movie.UpdatedAt = DateTime.UtcNow;
+            var movieAsJson = JsonSerializer.Serialize(movie);
+            var movieAttributes = Amazon.DynamoDBv2.DocumentModel.Document.FromJson(movieAsJson).ToAttributeMap();
 
-            var createMovie = new PutItemRequest
+            var putItemRequest = new PutItemRequest
             {
                 TableName = _tableName,
                 Item = movieAttributes
             };
 
-            var response = await _dynamoDb.PutItemAsync(createMovie);
+            var response = await _dynamoDb.PutItemAsync(putItemRequest);
 
             return response.HttpStatusCode == HttpStatusCode.OK;
         }
 
         public async Task<bool> DeleteMovieAsync(Guid id)
         {
-            var movie = new DeleteItemRequest
+            var deleteItemRequest = new DeleteItemRequest
             {
                 TableName = _tableName,
                 Key = new Dictionary<string, AttributeValue>
                 {
-                    {"id", new AttributeValue { S = id.ToString()}}
+                    {"pk", new AttributeValue { S = id.ToString()}},
+                    { "sk", new AttributeValue{ S = id.ToString()}},
                 }
             };
 
-            var response = await _dynamoDb.DeleteItemAsync(movie);
+            var response = await _dynamoDb.DeleteItemAsync(deleteItemRequest);
 
             return response.HttpStatusCode == HttpStatusCode.OK;
         }

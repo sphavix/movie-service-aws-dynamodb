@@ -15,19 +15,18 @@ namespace MoviesApi.Services
 
         public async Task<IEnumerable<Movie>> GetAllMoviesAsync()
         {
-            return await _movieRepository.GetAllMoviesAsync();
+            var movieDtos = await _movieRepository.GetAllMoviesAsync();
+            return movieDtos.Select(x => x.ToMovie());
         }
 
         public async Task<Movie> GetMovieByIdAsync(Guid id)
         {
-            return await _movieRepository.GetMovieByIdAsync(id);
+            var movieDto = await _movieRepository.GetMovieByIdAsync(id);
+            return movieDto.ToMovie();
         }
 
         public async Task<bool> CreateMovieAsync(Movie movie)
         {
-            var result = await _movieRepository.GetMovieByIdAsync(movie.Id);
-            if(result is not null) throw new Exception($"Movie with {movie.Id} already exist!");
-
             var movieDto = movie.ToMovieDto();
             return await _movieRepository.CreateMovieAsync(movieDto);
         }
@@ -43,9 +42,6 @@ namespace MoviesApi.Services
 
         public async Task<bool> DeleteMovieAsync(Guid id)
         {
-            var result = await _movieRepository.GetMovieByIdAsync(id);
-            if(result is null) throw new Exception($"Movie with {id} does not exist!");
-
             return await _movieRepository.DeleteMovieAsync(id);
         }
     }

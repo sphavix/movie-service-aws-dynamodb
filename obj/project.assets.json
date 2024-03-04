@@ -1487,24 +1487,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\": {}
+    "C:\\Users\\Hackethon\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\DevOps\\Learning\\AWSProjects\\Project012\\MoviesApi\\MoviesApi.csproj",
+      "projectUniqueName": "C:\\Users\\Hackethon\\Source\\Repos\\sphavix\\movie-service-aws-dynamodb\\MoviesApi.csproj",
       "projectName": "MoviesApi",
-      "projectPath": "H:\\DevOps\\Learning\\AWSProjects\\Project012\\MoviesApi\\MoviesApi.csproj",
-      "packagesPath": "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\",
-      "outputPath": "H:\\DevOps\\Learning\\AWSProjects\\Project012\\MoviesApi\\obj\\",
+      "projectPath": "C:\\Users\\Hackethon\\Source\\Repos\\sphavix\\movie-service-aws-dynamodb\\MoviesApi.csproj",
+      "packagesPath": "C:\\Users\\Hackethon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hackethon\\Source\\Repos\\sphavix\\movie-service-aws-dynamodb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\siphamandla.zolakhe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Hackethon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1575,7 +1577,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

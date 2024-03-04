@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MoviesApi.Dtos;
+using MoviesApi.Contracts.Dtos;
+using MoviesApi.Contracts.Requests;
+using MoviesApi.Mappings;
 using MoviesApi.Models;
 using MoviesApi.Services;
 
@@ -19,10 +21,11 @@ namespace MoviesApi.Controllers
 
 
         [HttpGet("movies")]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAll()
         {
             var movies = await _movieService.GetAllMoviesAsync();
-            return Ok(movies);
+            var movieResponse = movies.ToMovieResponse();
+            return Ok(movieResponse);
         }
 
         [HttpGet("movies/{id:guid}")]
@@ -31,15 +34,45 @@ namespace MoviesApi.Controllers
             var movie = await _movieService.GetMovieByIdAsync(id);
 
             if(movie is null) return NotFound();
-
-            return Ok(movie);
+            
+            var movieResponse = movie.ToMovieResponse();
+            return Ok(movieResponse);
         }
 
         [HttpPost("movies")]
-        public async Task<IActionResult> Post([FromBody] MovieRequest request)
+        public async Task<IActionResult> Create([FromBody] MovieRequest request)
         {
-            var response = await _movieService.CreateMovieAsync(request);
-            return CreatedAtAction(nameof(Get), new { id = movie.Id }, response);
+            var movie = request.ToMovie();
+            
+            await _movieService.CreateMovieAsync(movie);
+
+            var movieResponse = movie.ToMovieResponse();
+
+            return CreatedAtAction(nameof(Get), new { movieResponse.Id }, movieResponse);
+        }
+
+        [HttpPut("movies/{id:guid}")]
+        public async Task<IActionResult> Update([FromMultiSource] UpdateCustomerRequest request)
+        {
+            var existingMovie = await _movieService.GetMovieByIdAsync(request.Id);
+
+            if(existingMovie is null) return NotFound();
+
+            var movie = request.ToMovie();
+            await _movieService.UpdateMovieAsync(movie);
+
+            var movieResponse = movie.ToMovieResponse();
+            return Ok(movieResponse);
+        }
+
+        [HttpDelete("movies/{id:guid}")]
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
+        {
+            var movieDeleted = await _movieService.DeleteMovieAsync(id);
+
+            if(!movieDeleted) return NotFound();
+
+            return Ok();
         }
     }
 }
