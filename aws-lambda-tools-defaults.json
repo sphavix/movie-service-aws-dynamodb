@@ -1,0 +1,18 @@
+
+{
+  "region" : "eu-north-1",
+  "profile" : "default",
+  "configuration" : "Release",
+  "framework"     : "net8.0",
+  "function-name" : "moviesapi",
+  "function-description" : "Movies API with .NET Core",
+  "package-type"         : "Zip",
+  "function-handler"     : "MoviesApi",
+  "function-memory-size" : 256,
+  "function-role"        : "arn:aws:iam::378559237380:role/lambda_exec_moviesapi",
+  "function-timeout"     : 60,
+  "function-runtime"     : "dotnet8",
+  "function-architecture": "x86_64",
+  "environment-variables": "ASPNETCORE_ENVIRONMENT=Development",
+  "function-url-enable": true
+}
