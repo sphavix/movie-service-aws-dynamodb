@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hackethon\\Source\\Repos\\sphavix\\movie-service-aws-dynamodb\\MoviesApi.csproj": {}
+    "C:\\Users\\siphamandla.zolakhe\\movie-service-aws-dynamodb\\MoviesApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hackethon\\Source\\Repos\\sphavix\\movie-service-aws-dynamodb\\MoviesApi.csproj": {
+    "C:\\Users\\siphamandla.zolakhe\\movie-service-aws-dynamodb\\MoviesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hackethon\\Source\\Repos\\sphavix\\movie-service-aws-dynamodb\\MoviesApi.csproj",
+        "projectUniqueName": "C:\\Users\\siphamandla.zolakhe\\movie-service-aws-dynamodb\\MoviesApi.csproj",
         "projectName": "MoviesApi",
-        "projectPath": "C:\\Users\\Hackethon\\Source\\Repos\\sphavix\\movie-service-aws-dynamodb\\MoviesApi.csproj",
-        "packagesPath": "C:\\Users\\Hackethon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hackethon\\Source\\Repos\\sphavix\\movie-service-aws-dynamodb\\obj\\",
+        "projectPath": "C:\\Users\\siphamandla.zolakhe\\movie-service-aws-dynamodb\\MoviesApi.csproj",
+        "packagesPath": "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\siphamandla.zolakhe\\movie-service-aws-dynamodb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Hackethon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\siphamandla.zolakhe\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -84,12 +82,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[8.0.0, 8.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -98,12 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

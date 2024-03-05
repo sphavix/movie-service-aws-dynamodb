@@ -9,7 +9,6 @@
   "package-type"         : "Zip",
   "function-handler"     : "MoviesApi",
   "function-memory-size" : 256,
-  "function-role"        : "arn:aws:iam::378559237380:role/lambda_exec_moviesapi",
   "function-timeout"     : 60,
   "function-runtime"     : "dotnet8",
   "function-architecture": "x86_64",
