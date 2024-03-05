@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1fXj378MxuKPJQgS2eOo0GI+y5e39PWBFs0eJ84jKsDzTx7nTf/vL4OHawNzqLA3Q9HlNlK7reMmyGatYVWqIw==",
+  "dgSpecHash": "zPC7uuMsHnX/xZvqTnZCP3+McvpGHb3XCXLXt1FkAhBi2lpYqw+A7/dyuqENRjzA7uDCYYbVF4YL4e8+WkI0QA==",
   "success": true,
   "projectFilePath": "C:\\Users\\siphamandla.zolakhe\\movie-service-aws-dynamodb\\MoviesApi.csproj",
   "expectedPackageFiles": [
@@ -39,7 +39,8 @@
     "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
     "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.4.0\\system.identitymodel.tokens.jwt.7.4.0.nupkg.sha512",
     "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
-    "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
+    "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
+    "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\8.0.1\\microsoft.netcore.app.host.linux-x64.8.0.1.nupkg.sha512"
   ],
   "logs": []
 }

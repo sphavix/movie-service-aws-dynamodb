@@ -1,16 +1,15 @@
 version: 0.2
 phases:
-  pre_build:
-    commands:
-      - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 378559237380.dkr.ecr.eu-north-1.amazonaws.com
-      - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
-      - IMAGE_URI="${REPOSITORY_URI}:${TAG}"
+  install:
+    runtime-versions:
+      dotnet: 8.0
   build:
     commands:
-      - docker build -t "$IMAGE_URI" .
+      - dotnet build movie-service-aws-dynamodb/MovieApi.csproj
   post_build:
     commands:
-      - docker push "$IMAGE_URI"
-      - printf '[{"name":"dotnet-app","imageUri":"%s"}]' "$IMAGE_URI" > imagedefinition.json
+      -  dotnet publish -r linux-x64 movie-service-aws-dynamodb/MovieApi.csproj
 artifacts:
-  files: imagedefinition.json
+  files: 
+    - movie-service-aws-dynamodb/bin/Release/net8.0/linux-x64/publish/**/*
+  discard-paths: yes
