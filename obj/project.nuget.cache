@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zPC7uuMsHnX/xZvqTnZCP3+McvpGHb3XCXLXt1FkAhBi2lpYqw+A7/dyuqENRjzA7uDCYYbVF4YL4e8+WkI0QA==",
+  "dgSpecHash": "NSQei4Zm2XMvxVrWZijHdnVEOfxjd761UZACDu6hHASx4f8fKWmKruS6g2PVjknR2FFAnARusUkjTpt7WZmp5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\siphamandla.zolakhe\\movie-service-aws-dynamodb\\MoviesApi.csproj",
+  "projectFilePath": "H:\\DevOps\\Learning\\AWSProjects\\Project013\\movie-service-aws-dynamodb\\MoviesApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\amazon.lambda.apigatewayevents\\2.7.0\\amazon.lambda.apigatewayevents.2.7.0.nupkg.sha512",
     "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\amazon.lambda.applicationloadbalancerevents\\2.2.0\\amazon.lambda.applicationloadbalancerevents.2.2.0.nupkg.sha512",
@@ -40,7 +40,7 @@
     "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.4.0\\system.identitymodel.tokens.jwt.7.4.0.nupkg.sha512",
     "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
     "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
-    "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\8.0.1\\microsoft.netcore.app.host.linux-x64.8.0.1.nupkg.sha512"
+    "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\8.0.2\\microsoft.netcore.app.host.linux-x64.8.0.2.nupkg.sha512"
   ],
   "logs": []
 }

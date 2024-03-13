@@ -2060,11 +2060,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\siphamandla.zolakhe\\movie-service-aws-dynamodb\\MoviesApi.csproj",
+      "projectUniqueName": "H:\\DevOps\\Learning\\AWSProjects\\Project013\\movie-service-aws-dynamodb\\MoviesApi.csproj",
       "projectName": "MoviesApi",
-      "projectPath": "C:\\Users\\siphamandla.zolakhe\\movie-service-aws-dynamodb\\MoviesApi.csproj",
+      "projectPath": "H:\\DevOps\\Learning\\AWSProjects\\Project013\\movie-service-aws-dynamodb\\MoviesApi.csproj",
       "packagesPath": "C:\\Users\\siphamandla.zolakhe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\siphamandla.zolakhe\\movie-service-aws-dynamodb\\obj\\",
+      "outputPath": "H:\\DevOps\\Learning\\AWSProjects\\Project013\\movie-service-aws-dynamodb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\siphamandla.zolakhe\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2138,7 +2138,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Host.linux-x64",
-            "version": "[8.0.1, 8.0.1]"
+            "version": "[8.0.2, 8.0.2]"
           }
         ],
         "frameworkReferences": {
@@ -2149,7 +2149,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

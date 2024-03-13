@@ -62,6 +62,8 @@ builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();
 builder.Services.AddSingleton<IMovieRepository, MovieRepository>();
 builder.Services.AddSingleton<IMovieService, MovieService>();
 
+builder.Services.AddAWSLambdaHosting(LambdaEventSource.RestApi);
+
 
 var app = builder.Build();
 
